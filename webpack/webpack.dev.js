@@ -35,7 +35,7 @@ const config = {
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
-                ues: [
+                use: [
                     {
                         loader: 'file-loader',
                         options:{
@@ -47,7 +47,7 @@ const config = {
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\>v=\d+\.\d+\.\d+)?$/,
-                use:[
+                use: [
                     {
                         loader: 'file-loader',
                         options: {

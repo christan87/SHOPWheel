@@ -13,7 +13,7 @@ module.exports = {
             app: 'client/app'
         }
     },
-    modules:{
+    module:{
         rules: [
             {
                 test: /\.(js|jsx)$/, //regex that includes all .js & .jsx files

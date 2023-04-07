@@ -59,8 +59,8 @@
   },
   "scripts": {
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config webpack/webpack.dev.js",
-    "dev:server":"nodemon",
-    "dev":"npm-run-all --parallel dev:*",
+    "dev:server": "nodemon",
+    "dev": "npm-run-all --parallel dev:*",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -99,7 +99,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^9.8.8",
     "babel-loader": "^8.3.0",
     "chalk": "^5.2.0",
     "copy-webpack-plugin": "^5.1.2",
@@ -119,8 +119,8 @@
     "terser-webpack-plugin": "^1.4.5",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^4.13.1",
-    "webpack-merge": "^5.8.0",
+    "webpack-dev-server": "^3.11.3",
+    "webpack-merge": "^4.2.2",
     "webpack-pwa-manifest": "^4.3.0"
   }
 }
