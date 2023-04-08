@@ -12,12 +12,14 @@ import { reducer as notifications } from 'react-notification-system-redux';
 
 import applicationReducer from './containers/Application/reducer';
 import authenticationReducer from './containers/Authentication/reducer';
+import homepageReducer from './containers/Homepage/reducer';
 
 const createReducer = history => 
     combineReducers({
         router: connectRouter(history),
         notifications,
         application: applicationReducer,
+        homepage: homepageReducer,
         authentication: authenticationReducer
     });
 
