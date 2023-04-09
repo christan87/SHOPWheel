@@ -15,17 +15,10 @@ module.exports = {
     module:{
         rules: [
             {
-                test: /\.(js|jsx)$/, //regex that includes all .js & .jsx files
-                exclude: /(node_modules)/, // regex that excludes the none_modules dir
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['@babel/preset-env', { targets: "defaults" }]
-                        ]
-                    }
-                }
-            }
+                test: /\.(js|jsx)$/,
+                loader: 'babel-loader',
+                exclude: /(node_modules)/
+              }
         ]
     },
     plugins: [
