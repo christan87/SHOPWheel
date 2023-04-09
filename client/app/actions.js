@@ -10,7 +10,7 @@ import * as authentication from './containers/Authentication/actions';
 import * as homepage from './containers/Homepage/actions';
 
 export default function (dispatch) {
-    return (
+    return bindActionCreators(
         {
             ...application,
             ...authentication,

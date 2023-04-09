@@ -3,7 +3,7 @@
 */ 
 
 import React from "react";
-import { Provider } from "react";
+import { Provider } from "react-redux";
 import { ConnectedRouter } from 'connected-react-router';
 
 import store, { history } from './store';
@@ -27,7 +27,6 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 // rc-slider style
 import 'rc-slider/assets/index.css';
-import { Provider } from "react-redux";
 
 // Authentication
 const token = localStorage.getItem('token');
@@ -40,16 +39,18 @@ if(token) {
   store.dispatch({ type: SET_AUTH });
 }
 
-const App = () => {
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <SocketProvider>
-        <ScollToTop>
-          <Application />
-        </ScollToTop>
-      </SocketProvider>
-    </ConnectedRouter>
-  </Provider>
+const app = () => {
+  return(
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <SocketProvider>
+          <ScollToTop>
+            <Application />
+          </ScollToTop>
+        </SocketProvider>
+      </ConnectedRouter>
+    </Provider>
+  );
 }
 
-export default App;
+export default app;
