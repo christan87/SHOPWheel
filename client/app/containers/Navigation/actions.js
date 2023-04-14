@@ -3,7 +3,7 @@
 */ 
 
 import axios from "axios";
-//import handleError from '../../utils/error';
+import handleError from '../../utils/error';
 import {
     TOGGLE_MENU,
     TOGGLE_CART,
