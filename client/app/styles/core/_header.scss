@@ -1,0 +1,32 @@
+.header-info {
+    padding: 10px 0px;
+    background-color: $theme-light-black;
+
+    .fa,
+    span {
+        color: $white;
+        font-size: $font-size-medium !important;
+        font-weight: $font-weight-normal;
+        margin: 0px 5px;
+    }
+}
+
+.header {
+    background-color: $white;
+    border-bottom: $border-primary;
+
+    .logo {
+        font-size: $font-size-heading-large !important; 
+        font-weight: $font-weight-normal;
+    }
+}
+
+.fixed-mobile-header {
+    @include media-breakpoint-down(sm){
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 998;
+    }
+}

@@ -8,6 +8,7 @@ import actions from "../../actions";
 
 //routes
 import HomePage from "../Homepage";
+import Navigation from "../Navigation";
 
 import Page404 from '../../components/Common/Page404';
 
@@ -23,6 +24,7 @@ class Application extends React.PureComponent {
     render() {
         return (
             <div className="application">
+                <Navigation />
                 <main className="main">
                     <Container>
                         <div className="wrapper">
