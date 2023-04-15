@@ -17,7 +17,7 @@ const Popover = props => {
     );
 };
 
-Tooltip.defaultProps ={
+Popover.defaultProps ={
     placement: 'top'
 };
 

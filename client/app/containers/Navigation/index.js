@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { 
     Container, 
     Row, 
@@ -8,6 +8,8 @@ import {
 } from 'reactstrap';
 
 import actions from '../../actions';
+import Button from '../../components/Common/Button';
+import { BarsIcon } from '../../components/Common/Icon';
 
 class Navigation extends React.PureComponent {
   render() {
@@ -39,6 +41,34 @@ class Navigation extends React.PureComponent {
                 </Row>
             </Container>
         </div>
+        <Container>
+            <Row className='align-items-center top-header'>
+                <Col
+                    xs={{ size: 12, order: 1}}
+                    sm={{ size: 12, order: 1}}
+                    md={{ size: 3, order: 1}}
+                    lg={{ size: 3, order: 1}}
+                    className='pr-0'
+                >
+                    <div className='brand'>
+                        {/* {categories && categories.length > 0 &&} */ true && (
+                            <Button
+                                borderless
+                                variant='empty'
+                                className='d-none d-md-block'
+                                ariaLabel='open the menu'
+                                icon={ <BarsIcon /> }
+                                onClick={() => alert('Clicked!')}
+                            />
+                        )}
+                        <Link to='/'>
+                            <h1 className='logo'>MERN Store</h1>
+                        </Link>
+                    </div>
+                </Col>
+                    
+            </Row>
+        </Container>
       </header>
     )
   }

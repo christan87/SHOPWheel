@@ -30,3 +30,45 @@
         z-index: 998;
     }
 }
+
+.top-header{
+    padding: 16px 0px;
+
+    @include media-breakpoint-up(lg){
+        padding: 22px 0px;
+    }
+
+    .bars-icon {
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+
+    .cart-icon{
+
+    }
+
+    .fa {
+        cursor: pointer;
+        color: $theme-dark-gray;
+        font-size: $font-size-x-huge !important;
+    }
+
+    .brand {
+        @include flex();
+        flex-wrap: wrap;
+        align-items: center;
+        @include media-breakpoint-down(sm) {
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .logo {
+            margin: 0px;
+            color: $font-custom-color !important;
+            @include media-breakpoint-up(md) {
+                margin-left: 15px;
+            }
+        }
+    }
+}
