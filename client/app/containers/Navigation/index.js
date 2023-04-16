@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom';
+import Autosuggest from 'react-autosuggest';
+import AutosuggestHighlightMatch from 'autosuggest-highlight/match';
+import AutosuggestHighlighParse from 'autosuggest-highlight/parse';
 import { 
     Container, 
     Row, 
@@ -62,11 +65,10 @@ class Navigation extends React.PureComponent {
                             />
                         )}
                         <Link to='/'>
-                            <h1 className='logo'>MERN Store</h1>
+                            <h1 className='logo'>SHOP Wheel</h1>
                         </Link>
                     </div>
                 </Col>
-                    
             </Row>
         </Container>
       </header>
