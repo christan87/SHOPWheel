@@ -55,7 +55,7 @@ class Navigation extends React.PureComponent {
                             <Button
                                 borderless
                                 variant='empty'
-                                className=' d-none d-md-block'
+                                className='d-none d-md-block'
                                 ariaLabel='open the menu'
                                 icon={ <BarsIcon /> }
                                 onClick={() => alert('Clicked!')}
