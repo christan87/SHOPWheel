@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom';
 import Autosuggest from 'react-autosuggest';
-import AutosuggestHighlightMatch from 'autosuggest-highlight/match';
-import AutosuggestHighlighParse from 'autosuggest-highlight/parse';
 import { 
     Container, 
     Row, 
@@ -19,6 +17,13 @@ class Navigation extends React.PureComponent {
     const {
 
     } = this.props;
+
+    // Must Change with Autosuggest!
+    const inputProps = {
+        placeholder: "Search Products...",
+        value: '',
+        onchange: ()=>{}
+    }
 
     return (
       <header className='header fixed-mobile-header'>
@@ -68,6 +73,23 @@ class Navigation extends React.PureComponent {
                             <h1 className='logo'>SHOP Wheel</h1>
                         </Link>
                     </div>
+                </Col>
+                <Col
+                    xs={{ size: 12, order: 4}}
+                    sm={{ size: 12, order: 4}}
+                    md={{ size: 12, order: 4}}
+                    lg={{ size: 5, order: 2}}
+                    className='pt-2 pt-lg-0'
+                >
+                    {/* NOT FINAL COMPONENT CONFIG! Must be updated after api server created */}
+                    <Autosuggest 
+                        suggestions={[]}
+                        onSuggestionsFetchRequested={()=>{}}
+                        onSuggestionsClearRequested={()=>{}}
+                        getSuggestionValue={()=>{}}
+                        renderSuggestion={()=>{}}
+                        inputProps={inputProps}
+                    />
                 </Col>
             </Row>
         </Container>
