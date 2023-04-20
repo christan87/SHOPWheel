@@ -1,21 +1,37 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, NavLink as ActiveLink } from 'react-router-dom';
 import Autosuggest from 'react-autosuggest';
 import { 
     Container, 
     Row, 
-    Col
+    Col,
+    Navbar,
+    Nav,
+    NavLink,
+    UncontrolledDropdown,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    NavItem
 } from 'reactstrap';
 
 import actions from '../../actions';
 import Button from '../../components/Common/Button';
 import { BarsIcon } from '../../components/Common/Icon';
+import CartIcon from '../../components/Common/CartIcon';
+import MiniBrand from '../../components/Store/MiniBrand';
 
 class Navigation extends React.PureComponent {
   render() {
     const {
-
+        history,
+        isMenuOpen,
+        isCartOpen,
+        isBrandOpen,
+        toggleCart,
+        toggleMenu
     } = this.props;
 
     // Must Change with Autosuggest!
@@ -91,6 +107,95 @@ class Navigation extends React.PureComponent {
                         inputProps={inputProps}
                     />
                 </Col>
+                <Col
+                    xs={{ size: 12, order: 2}}
+                    sm={{ size: 12, order: 2}}
+                    md={{ size: 4, order: 1}}
+                    lg={{ size: 5, order: 3}}
+                    className='desktop-hidden'
+                >
+                    <div className='header-links'>
+                        <Button
+                            borderless
+                            variant='empty'
+                            ariaLabel='open the menu'
+                            icon={ <BarsIcon /> }
+                            onClick={() => alert('Clicked!')}
+                        />
+                        <CartIcon cartItems={[]} onClick={()=>{alert('Clicked!')}} />
+                    </div>
+                </Col>
+                <Col
+                    xs={{ size: 12, order: 2}}
+                    sm={{ size: 12, order: 2}}
+                    md={{ size: 9, order: 1}}
+                    lg={{ size: 4, order: 3}}
+                >
+                    <Navbar color='light' light expand='md' className='mt-1 mt-md-0'>
+                        <CartIcon 
+                            className='d-none d-md-block'
+                            cartItems={[]} 
+                            onClick={()=>{alert('Clicked!')}} 
+                        />
+                        <Nav navbar>
+                            {/* {brands && brands.length} */}
+                            {true &&(
+                                <Dropdown
+                                    nav
+                                    inNavbar
+                                    toggle={() => {alert('dropdown toggled')}}
+                                    isOpen={false}
+                                >
+                                    <DropdownToggle nav>
+                                        Brands
+                                        <span className='fa fa-chevron-down dropdown-caret'></span>
+                                    </DropdownToggle>
+                                    <DropdownMenu right className='nav-brand-dropdown'>
+                                        <div className='mini-brand'>
+                                            <MiniBrand 
+                                                brands={[{name: 'Common'}, {name: 'Delux'}, {name: 'Luxury'}]}
+                                                toggleBrand={()=>{alert('mini-brand toggled')}}
+                                            />
+                                        </div>
+                                    </DropdownMenu>
+                                </Dropdown>
+                            )}
+                            <NavItem>
+                                <NavLink
+                                    tag={ActiveLink}
+                                    to='/shop'
+                                    activeClassName='active'
+                                >
+                                    Shop
+                                </NavLink>
+                            </NavItem>
+                            {/* {authenticated ? (...)} */}
+                            {false ? (
+                                <UncontrolledDropdown nav inNavbar>
+                                    <DropdownToggle nav>
+                                        {/*user.firstName*/ false ? user.firstName : 'Welcome!'}
+                                        <span className='fa fa-chevron-down dropdown-caret'></span>
+                                    </DropdownToggle>
+                                </UncontrolledDropdown>
+                            ) : (
+                                <UncontrolledDropdown nav inNavbar>
+                                    <DropdownToggle nav>
+                                        Welcome!
+                                        <span className='fa fa-chevron-down dropdown-caret'></span> 
+                                    </DropdownToggle>
+                                    <DropdownMenu right>
+                                        <DropdownItem onClick={()=>{alert('Login Clicked')}}>
+                                            Login
+                                        </DropdownItem>
+                                        <DropdownItem onClick={()=>{alert('Sign Up Clicked')}}>
+                                            Sign Up in
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </UncontrolledDropdown>
+                            )}
+                        </Nav>
+                    </Navbar>
+                </Col>
             </Row>
         </Container>
       </header>
@@ -100,6 +205,9 @@ class Navigation extends React.PureComponent {
 
 const mapStateToProps = state => {
     return {
+        isMenuOpen: state.navigation.isMenuOpen,
+        isCartOpen: state.navigation.isCartOpen,
+        isBrandOpen: state.navigation.isBrandOpen,
     }
 };
 
