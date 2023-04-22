@@ -22,6 +22,7 @@ import Button from '../../components/Common/Button';
 import { BarsIcon } from '../../components/Common/Icon';
 import CartIcon from '../../components/Common/CartIcon';
 import MiniBrand from '../../components/Store/MiniBrand';
+import Cart from '../Cart';
 
 class Navigation extends React.PureComponent {
   render() {
@@ -122,7 +123,7 @@ class Navigation extends React.PureComponent {
                             icon={ <BarsIcon /> }
                             onClick={() => alert('Clicked!')}
                         />
-                        <CartIcon cartItems={[]} onClick={()=>{alert('Clicked!')}} />
+                        <CartIcon cartItems={[]} onClick={toggleCart} />
                     </div>
                 </Col>
                 <Col
@@ -135,7 +136,7 @@ class Navigation extends React.PureComponent {
                         <CartIcon 
                             className='d-none d-md-block'
                             cartItems={[]} 
-                            onClick={()=>{alert('Clicked!')}} 
+                            onClick={toggleCart} 
                         />
                         <Nav navbar>
                             {/* {brands && brands.length} */}
@@ -198,6 +199,21 @@ class Navigation extends React.PureComponent {
                 </Col>
             </Row>
         </Container>
+        {/* Hidden Cart Drawer */}
+        <div
+            className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
+            aria-hidden={`${isCartOpen ? false : true}`}
+        >
+            <div className='mini-cart'>
+                <Cart />
+            </div>
+            <div
+                className={
+                    isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawe-backdrop'
+                }
+                onClick={toggleCart}
+            />
+        </div>
       </header>
     )
   }

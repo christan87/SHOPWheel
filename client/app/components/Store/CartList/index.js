@@ -61,14 +61,14 @@ const CartList = props => {
                                     <p className="item-label">price</p>
                                 </Col>
                                 <Col xs='3' className="text-right">
-                                    <p className="value price">{`$${item?.totalPrice}`}</p>
+                                    <p className="value price">{`$${item.totalPrice}`}</p>
                                 </Col>
                             </Row>
                             <Row className="mb-2 align-items-center">
                                 <Col xs='9'>
                                     <p className="item-label">quantity</p>
                                 </Col>
-                                <Col className="value quantity">{`${item?.quantity}`}</Col>
+                                <Col className="value quantity">{`${item.quantity}`}</Col>
                             </Row>
                         </Container>
                     </div>

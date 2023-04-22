@@ -6,3 +6,5 @@ export const SOCKET_URL =
         : window.location.host;
 
 export const CART_ITEMS = 'cart_items';
+export const CART_TOTAL = 'cart_total';
+export const CART_ID = 'cart_id';
