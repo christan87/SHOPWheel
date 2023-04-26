@@ -14,6 +14,7 @@ import applicationReducer from './containers/Application/reducer';
 import authenticationReducer from './containers/Authentication/reducer';
 import homepageReducer from './containers/Homepage/reducer';
 import navigationReducer from "./containers/Navigation/reducer";
+import navigationMenuReducer from "./containers/NavigationMenu/reducer";
 
 const createReducer = history => 
     combineReducers({
@@ -22,7 +23,9 @@ const createReducer = history =>
         application: applicationReducer,
         homepage: homepageReducer,
         authentication: authenticationReducer,
-        navigation: navigationReducer
+        navigation: navigationReducer,
+        menu: navigationMenuReducer
+
     });
 
 export default createReducer;

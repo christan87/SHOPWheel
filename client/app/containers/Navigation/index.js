@@ -23,8 +23,17 @@ import { BarsIcon } from '../../components/Common/Icon';
 import CartIcon from '../../components/Common/CartIcon';
 import MiniBrand from '../../components/Store/MiniBrand';
 import Cart from '../Cart';
+import Menu from '../NavigationMenu';
 
 class Navigation extends React.PureComponent {
+  componentDidMount() {
+    // to be filled out after server creation...
+  }
+
+  toggleMenu() {
+    this.props.toggleMenu();
+  }
+
   render() {
     const {
         history,
@@ -83,7 +92,7 @@ class Navigation extends React.PureComponent {
                                 className='d-none d-md-block'
                                 ariaLabel='open the menu'
                                 icon={ <BarsIcon /> }
-                                onClick={() => alert('Clicked!')}
+                                onClick={() => this.toggleMenu()}
                             />
                         )}
                         <Link to='/'>
@@ -214,6 +223,17 @@ class Navigation extends React.PureComponent {
                 onClick={toggleCart}
             />
         </div>
+
+        {/* hidden menu drawer */}
+        <div
+            className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
+            aria-hidden={`${isMenuOpen ? false : true}`}
+        >
+            <div>
+                <Menu />
+            </div>
+        </div>
+
       </header>
     )
   }
