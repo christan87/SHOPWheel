@@ -218,7 +218,7 @@ class Navigation extends React.PureComponent {
             </div>
             <div
                 className={
-                    isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawe-backdrop'
+                    isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
                 }
                 onClick={toggleCart}
             />
@@ -229,9 +229,15 @@ class Navigation extends React.PureComponent {
             className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
             aria-hidden={`${isMenuOpen ? false : true}`}
         >
-            <div>
+            <div className='mini-menu'>
                 <Menu />
             </div>
+            <div
+                className={
+                    isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
+                }
+                onClick={toggleMenu}
+            />
         </div>
 
       </header>
