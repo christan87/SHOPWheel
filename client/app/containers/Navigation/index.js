@@ -234,7 +234,7 @@ class Navigation extends React.PureComponent {
             </div>
             <div
                 className={
-                    isCartOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
+                    isMenuOpen ? 'drawer-backdrop dark-overflow' : 'drawer-backdrop'
                 }
                 onClick={toggleMenu}
             />
