@@ -15,7 +15,7 @@ import authenticationReducer from './containers/Authentication/reducer';
 import homepageReducer from './containers/Homepage/reducer';
 import navigationReducer from "./containers/Navigation/reducer";
 import navigationMenuReducer from "./containers/NavigationMenu/reducer";
-
+import newsletterReducer from './containers/Newsletter/reducer';
 const createReducer = history => 
     combineReducers({
         router: connectRouter(history),
@@ -24,7 +24,8 @@ const createReducer = history =>
         homepage: homepageReducer,
         authentication: authenticationReducer,
         navigation: navigationReducer,
-        menu: navigationMenuReducer
+        menu: navigationMenuReducer,
+        newsletter: newsletterReducer
 
     });
 

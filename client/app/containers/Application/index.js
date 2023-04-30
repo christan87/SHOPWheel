@@ -11,6 +11,7 @@ import HomePage from "../Homepage";
 import Navigation from "../Navigation";
 
 import Page404 from '../../components/Common/Page404';
+import Footer from "../../components/Common/Footer";
 
 class Application extends React.PureComponent {
     constructor(props) {
@@ -36,6 +37,7 @@ class Application extends React.PureComponent {
                         </div>
                     </Container>
                 </main>
+                <Footer />
             </div>
         );
     }
