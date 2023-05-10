@@ -60,32 +60,32 @@ const Footer = () => {
                             <Newsletter />
                         </div>
                     </div>
-                    <div className='footer-copyright'>
-                        <span>© {new Date().getFullYear()} SHOP Wheel</span>
-                    </div>
-                    <ul className='footer-social-items'>
-                        <li>
-                            <a href='/#facebook' rel='nonreferrer noopener' target='_blank'>
-                                <span className='facebook-icon' />
-                            </a>
-                        </li>
-                        <li>
-                            <a href='/#instagram' rel='nonreferrer noopener' target='_blank'>
-                                <span className='instagram-icon' />
-                            </a>
-                        </li>
-                        <li>
-                            <a href='/#pinterest' rel='nonreferrer noopener' target='_blank'>
-                                <span className='pinterest-icon' />
-                            </a>
-                        </li>
-                        <li>
-                            <a href='/#twitter' rel='nonreferrer noopener' target='_blank'>
-                                <span className='twitter-icon' />
-                            </a>
-                        </li>
-                    </ul>
                 </div>
+                <div className='footer-copyright'>
+                    <span>© {new Date().getFullYear()} SHOP Wheel</span>
+                </div>
+                <ul className='footer-social-items'>
+                    <li>
+                        <a href='/#facebook' rel='nonreferrer noopener' target='_blank'>
+                            <span className='facebook-icon' />
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/#instagram' rel='nonreferrer noopener' target='_blank'>
+                            <span className='instagram-icon' />
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/#pinterest' rel='nonreferrer noopener' target='_blank'>
+                            <span className='pinterest-icon' />
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/#twitter' rel='nonreferrer noopener' target='_blank'>
+                            <span className='twitter-icon' />
+                        </a>
+                    </li>
+                </ul>
             </Container>
         </footer>
     )
