@@ -194,7 +194,7 @@ class Navigation extends React.PureComponent {
                                         <span className='fa fa-chevron-down dropdown-caret'></span> 
                                     </DropdownToggle>
                                     <DropdownMenu right>
-                                        <DropdownItem onClick={()=>{alert('Login Clicked')}}>
+                                        <DropdownItem onClick={()=> history.push('login')}>
                                             Login
                                         </DropdownItem>
                                         <DropdownItem onClick={()=>{alert('Sign Up Clicked')}}>
