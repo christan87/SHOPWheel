@@ -14,7 +14,13 @@ import SignupProvider from '../../components/Common/SignupProvider';
 class Login extends React.PureComponent {
     
     render() {
-        const {} = this.props;
+        const {
+            loginFormData,
+            loginChange,
+            formErrors,
+            isLoading,
+            idSubmitting
+        } = this.props;
         return (
             <div className='login-form'>
                 <h2>Login Form</h2>
@@ -29,26 +35,26 @@ class Login extends React.PureComponent {
                             <Col xs='12' md='12' >
                                 <Input 
                                     type={'text'}
-                                    //error={{}}
+                                    error={formErrors['email']}
                                     label={'Email Adress'}
                                     name={'email'}
                                     placeholder={'Email...'}
-                                    value={{}}
+                                    value={loginFormData.email}
                                     onInputChange={(name, value) => {
-                                        //some function??
+                                        loginChange(name, value)
                                     }}
                                 />
                             </Col>
                             <Col xs='12' md='12' >
                                 <Input 
                                     type={'password'}
-                                    //error={{}}
+                                    error={formErrors['password']}
                                     label={'Password'}
                                     name={'password'}
                                     placeholder={'Password...'}
-                                    value={{}}
+                                    value={loginFormData.password}
                                     onInputChange={(name, value) => {
-                                        //some function??
+                                        loginChange(name, value)
                                     }}
                                 />
                             </Col>
@@ -62,20 +68,20 @@ class Login extends React.PureComponent {
                         </Col>
                     </Row>
                     <hr />
-                    <div className='d-flex flex-column flex-md-row align-items-md-center justify-conent-between'>
-                        <div>
+                    <div className='d-flex flex-column flex-md-row align-items-md-center justify-content-between'>
+                        <div className='d-flex justify-content-between align-items-center mb-3 mb-md-0'>
                             <Button 
                                 type='submit'
                                 variant='primary'
                                 text='Login'
                                 disabled={false}
                             />
+                            <Button 
+                                variant='link'
+                                text='Create an Account'
+                                onClick={()=>alert('Create an Account Clicked!')}
+                            />
                         </div>
-                        <Button 
-                            variant='link'
-                            text='Create an Account'
-                            onClick={()=>alert('Create an Account Clicked!')}
-                        />
                         <Link
                             className='redirect-link forgot-password-link'
                             to={'#/forgot-password'}
@@ -91,7 +97,10 @@ class Login extends React.PureComponent {
 
 const mapStateToProps = state => {
     return {
-
+        loginFormData: state.login.loginFormData,
+        formErrors: state.login.formErrors,
+        isLoading: state.login.isLoading,
+        isSubmitting: state.login.isSubmitting
     };
 };
 

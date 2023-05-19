@@ -10,6 +10,7 @@ import * as authentication from './containers/Authentication/actions';
 import * as homepage from './containers/Homepage/actions';
 import * as navigation from './containers/Navigation/actions';
 import * as newsletter from './containers/Newsletter/actions';
+import * as login from './containers/Login/actions';
 
 export default function (dispatch) {
     return bindActionCreators(
@@ -18,7 +19,8 @@ export default function (dispatch) {
             ...authentication,
             ...homepage,
             ...navigation,
-            ...newsletter
+            ...newsletter,
+            ...login
         },
         dispatch
     );

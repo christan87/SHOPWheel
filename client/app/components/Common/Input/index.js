@@ -11,13 +11,18 @@ const Input = props => {
         value,
         placeholder,
         inlineElement,
-        disabled
+        disabled,
+        onInputChange
     } = props;
 
 
-    const onChange = e => {
-
-    }
+    const _onChange = e => {
+        if(e.target.name === 'image'){
+            alert('Fill in this method from /components/Common/Input')
+        } else {
+            onInputChange(e.target.name, e.target.value);
+        }
+    };
 
     if(type === 'textarea') {
         const styles = `input-box${error? ' invalid' : ''}`;
@@ -26,7 +31,7 @@ const Input = props => {
                 {label  && <label>{label}</label>}
                 <textarea 
                     type={'textarea'}
-                    onChange={e => {onChange(e);}}
+                    onChange={e => {_onChange(e);}}
                     rows={rows}
                     name={name}
                     value={value}
@@ -46,7 +51,7 @@ const Input = props => {
                         className={'input-text'}
                         autoComplete='on'
                         type={type}
-                        onChange={e => {onChange(e)}}
+                        onChange={e => {_onChange(e)}}
                         disabled={disabled}
                         name={name}
                         value={value}
