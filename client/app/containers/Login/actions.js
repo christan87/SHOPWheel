@@ -14,6 +14,7 @@ import{
     SET_LOGIN_SUBMITTING
 } from './constants';
 
+import { setAuth, clearAuth } from '../Authentication/actions';
 import setToken from '../../utils/token';
 import handleError from "../../utils/error";
 
