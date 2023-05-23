@@ -17,6 +17,11 @@ module.exports = {
         secret: process.env.JWT_SECRET,
         tokenLife: '7d' // 7 days
     },
+    sendgrid: {
+        key: process.env.SENDGRID_KEY,
+        domain: process.env.SENDGRID_DOMAIN,
+        sender: process.env.SENDGRID_EMAIL_SENDER
+    },
     mailgun: {
         key: process.env.MAILGUN_KEY,
         domain: process.env.MAILGUN_DOMAIN,
