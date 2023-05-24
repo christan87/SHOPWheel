@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 
 // dont forget to add the actions from this dir to the referenced actions file
@@ -15,17 +15,25 @@ class Login extends React.PureComponent {
     
     render() {
         const {
+            authenticated,
             loginFormData,
             loginChange,
+            login,
             formErrors,
             isLoading,
             idSubmitting
         } = this.props;
+
+        if(authenticated) return <Redirect to='/dashboard' />
+        const handleSubmit = event => {
+            event.preventDefault();
+            login();
+        }
         return (
             <div className='login-form'>
                 <h2>Login Form</h2>
                 <hr />
-                <form onSubmit={()=> alert('Form Submitted')}>
+                <form onSubmit={handleSubmit}>
                     <Row>
                         <Col
                             xs={{size: 12, order: 2}}
@@ -97,6 +105,7 @@ class Login extends React.PureComponent {
 
 const mapStateToProps = state => {
     return {
+        authenticated: state.authentication.authenticated,
         loginFormData: state.login.loginFormData,
         formErrors: state.login.formErrors,
         isLoading: state.login.isLoading,

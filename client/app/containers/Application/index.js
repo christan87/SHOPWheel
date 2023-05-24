@@ -10,6 +10,8 @@ import actions from "../../actions";
 import HomePage from "../Homepage";
 import Navigation from "../Navigation";
 import Login from "../Login";
+import Authentication from "../Authentication";
+import Dashboard from "../Dashboard";
 
 import Page404 from '../../components/Common/Page404';
 import Footer from "../../components/Common/Footer";
@@ -33,6 +35,10 @@ class Application extends React.PureComponent {
                             <Switch>
                                 <Route exact path='/' component={HomePage} />
                                 <Route exact path='/login' component={Login} />
+                                <Route 
+                                    path='/dashboard'
+                                    component={Authentication(Dashboard)}
+                                />
                                 <Route path='/404' component={Page404} />
                                 <Route path='*' component={Page404} />
                             </Switch>
