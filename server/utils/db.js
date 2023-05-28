@@ -17,7 +17,7 @@ const setupDB = async () => {
         }).catch(err => {
             console.log(`${chalk.red('x')} ${chalk.red('NOT Connected to MongoDB! server/utils/db')}`)
             console.log(err)
-            setupDB(); // Solves connection issues (Probably not the best sollution)
+            setupDB(); // Solves connection issues [for shotty networl (work)] (Probably not the best sollution)
         });
     } catch (error) {
         return null;
