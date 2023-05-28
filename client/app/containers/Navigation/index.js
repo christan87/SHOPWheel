@@ -29,6 +29,10 @@ class Navigation extends React.PureComponent {
     // to be filled out after server creation...
   }
 
+  toggleBrand() {
+    this.props.toggleBrand();
+  }
+
   toggleMenu() {
     this.props.toggleMenu();
   }
@@ -156,14 +160,14 @@ class Navigation extends React.PureComponent {
                                 <Dropdown
                                     nav
                                     inNavbar
-                                    toggle={() => {alert('dropdown toggled')}}
-                                    isOpen={false}
+                                    toggle={() => this.toggleBrand()}
+                                    isOpen={isBrandOpen}
                                 >
                                     <DropdownToggle nav>
                                         Brands
                                         <span className='fa fa-chevron-down dropdown-caret'></span>
                                     </DropdownToggle>
-                                    <DropdownMenu right className='nav-brand-dropdown'>
+                                    <DropdownMenu end className='nav-brand-dropdown'>
                                         <div className='mini-brand'>
                                             <MiniBrand 
                                                 brands={[{name: 'Common'}, {name: 'Delux'}, {name: 'Luxury'}]}
