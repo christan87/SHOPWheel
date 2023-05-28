@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 const { ROLES } = require('../constants');
 const keys = require('../config/keys');
+const User = mongoose.model('User');
+
 
 // not final configuration 
 const socket = server => {

@@ -16,7 +16,6 @@ import {
     DropdownItem,
     NavItem
 } from 'reactstrap';
-
 import actions from '../../actions';
 import Button from '../../components/Common/Button';
 import { BarsIcon } from '../../components/Common/Icon';
@@ -41,7 +40,9 @@ class Navigation extends React.PureComponent {
         isCartOpen,
         isBrandOpen,
         toggleCart,
-        toggleMenu
+        toggleMenu,
+        authenticated,
+        user
     } = this.props;
 
     // Must Change with Autosuggest!
@@ -50,6 +51,8 @@ class Navigation extends React.PureComponent {
         value: '',
         onChange: ()=>{}
     }
+
+    console.log("user: ", user)
 
     return (
       <header className='header fixed-mobile-header'>
@@ -179,13 +182,19 @@ class Navigation extends React.PureComponent {
                                     Shop
                                 </NavLink>
                             </NavItem>
-                            {/* {authenticated ? (...)} */}
-                            {false ? (
+                            {authenticated ? (
                                 <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle nav>
-                                        {/*user.firstName*/ false ? user.firstName : 'Welcome!'}
+                                        {user.firstName ? user.firstName : 'Welcome!'}
                                         <span className='fa fa-chevron-down dropdown-caret'></span>
                                     </DropdownToggle>
+                                    <DropdownMenu right>
+                                        <DropdownItem
+                                            onClick={() => history.push('/dashboard')}
+                                        >
+                                            Dashboard
+                                        </DropdownItem>
+                                    </DropdownMenu>
                                 </UncontrolledDropdown>
                             ) : (
                                 <UncontrolledDropdown nav inNavbar>
@@ -250,6 +259,8 @@ const mapStateToProps = state => {
         isMenuOpen: state.navigation.isMenuOpen,
         isCartOpen: state.navigation.isCartOpen,
         isBrandOpen: state.navigation.isBrandOpen,
+        authenticated: state.authentication.authenticated,
+        user: state.account.user 
     }
 };
 

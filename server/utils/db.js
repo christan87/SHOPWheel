@@ -14,7 +14,11 @@ const setupDB = async () => {
             useFindAndModify: false
         }).then(() => {
             console.log(`${chalk.green('✓')} ${chalk.blue('Connected to MongoDB!')}`)
-        }).catch(err => console.log(err));
+        }).catch(err => {
+            console.log(`${chalk.red('x')} ${chalk.red('NOT Connected to MongoDB! server/utils/db')}`)
+            console.log(err)
+            setupDB(); // Solves connection issues (Probably not the best sollution)
+        });
     } catch (error) {
         return null;
     }

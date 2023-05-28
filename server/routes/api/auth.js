@@ -18,7 +18,6 @@ const { secret, tokenLife } = keys.jwt;
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
-        console.log(`email:${email} password:${password}`)
 
         if(!email){
             return res.status(400).json({error: 'You must enter an email address.'});
@@ -43,7 +42,7 @@ router.post('/login', async (req, res) => {
             id: user.id
         };
         const token = jwt.sign(payload, secret, { expiresIn: tokenLife });
-        console.log("========Check========")
+
         if(!token){
             throw new Error();
         }

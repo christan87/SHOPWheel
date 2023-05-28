@@ -17,12 +17,13 @@ import Page404 from '../../components/Common/Page404';
 import Footer from "../../components/Common/Footer";
 
 class Application extends React.PureComponent {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
+        const token = localStorage.getItem('token');
 
+        if(token) {
+            this.props.fetchProfile()
+        }
     }
 
     render() {

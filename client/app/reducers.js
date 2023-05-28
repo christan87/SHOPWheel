@@ -17,6 +17,7 @@ import navigationReducer from "./containers/Navigation/reducer";
 import navigationMenuReducer from "./containers/NavigationMenu/reducer";
 import newsletterReducer from './containers/Newsletter/reducer';
 import loginReducer from "./containers/Login/reducer";
+import accountReducer from "./containers/Account/reducer";
 
 const createReducer = history => 
     combineReducers({
@@ -28,7 +29,8 @@ const createReducer = history =>
         navigation: navigationReducer,
         menu: navigationMenuReducer,
         newsletter: newsletterReducer,
-        login: loginReducer
+        login: loginReducer,
+        account: accountReducer
 
     });
 
