@@ -27,10 +27,8 @@ export const fetchProfile = () => {
         try {
             dispatch(setProfileLoading(true));
             const response = await axios.get('http://localhost:3000/api/user/');
-            console.log(`=================> AccountActions/fetchProfile/response: ${response}`)
             dispatch({type: FETCH_PROFILE, payload: response.data.user});
         } catch (error) {
-            console.log(`=================> AccountActions/fetchProfile/response: ERROR`)
             handleError(error, dispatch)
         } finally {
             dispatch(setProfileLoading(false));

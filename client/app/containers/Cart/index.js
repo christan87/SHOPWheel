@@ -27,7 +27,6 @@ class Cart extends React.PureComponent {
             authenticated
         } = this.props;
 
-        console.log(`===>isCartOpen: ${isCartOpen}`)
         return (
             <div className="cart">
                 <div className="cart-header">

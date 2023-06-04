@@ -56,8 +56,6 @@ class Navigation extends React.PureComponent {
         onChange: ()=>{}
     }
 
-    console.log("user: ", user)
-
     return (
       <header className='header fixed-mobile-header'>
         <div className='header-info'>

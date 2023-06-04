@@ -31,7 +31,7 @@ class Dashboard extends React.PureComponent{
                         toggleMenu={toggleDashboardMenu}
                     />
                     :
-                    <><h1>userRole undefined{console.log('===>',user)}</h1></>
+                    <><h1>userRole undefined</h1></>
                 }
             </>
         )
