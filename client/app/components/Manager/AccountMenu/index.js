@@ -10,69 +10,7 @@ import { Collapse, Navbar } from 'reactstrap';
 import Button from '../../Common/Button';
 
 const AccountMenu = props => {
-    const {user, isMenuOpen, links, toggleMenu} = props
-    const links2 = [
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        },
-        {
-            prefix: '/blah',
-            to: '/blah',
-            name: '[Some Link]',
-            provider: 'email'
-        }
-    ];
+    const {user, isMenuOpen, links, toggleMenu} = props;
 
     const getAllowedProvider = link => {
         if(!link.provider) return true;
@@ -94,7 +32,7 @@ const AccountMenu = props => {
             <Navbar color='light' light expand='md'>
                 <Collapse isOpen={isMenuOpen} navbar>
                     <ul className='panel-links'>
-                        {links2.map((link, index) => {
+                        {links.map((link, index) => {
                             const PREFIX = link.prefix ? link.prefix : '';
                             const isProviderAllowed = getAllowedProvider(link);
                             if(!isProviderAllowed) return;

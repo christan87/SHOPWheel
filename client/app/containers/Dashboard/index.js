@@ -7,6 +7,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../../actions';
 import { ROLES } from '../../constants';
+import dashboardLinks from './links.json';
 import Admin from '../../components/Manager/Dashboard/Admin';
 
 class Dashboard extends React.PureComponent{
@@ -27,7 +28,7 @@ class Dashboard extends React.PureComponent{
                     <Admin 
                         user={user}
                         isMenuOpen={isMenuOpen}
-                        links={{}}
+                        links={dashboardLinks[ROLES.Admin]}
                         toggleMenu={toggleDashboardMenu}
                     />
                     :
