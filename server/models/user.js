@@ -30,7 +30,7 @@ const UserSchema = new Schema({
     provider:{
         type: String,
         required: true,
-        default: 'email'
+        default: 'Email'
     },
     googleId:{
         type: String
