@@ -16,68 +16,68 @@ const AccountMenu = props => {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         },
         {
             prefix: '/blah',
             to: '/blah',
             name: '[Some Link]',
-            provider: 'linkprovider'
+            provider: 'email'
         }
     ];
 
     const getAllowedProvider = link => {
         if(!link.provider) return true;
+        const userProvider = user.provider !== undefined ? user.provider : '';
         //const userProvider = user.provider ?? '';
-        const userProvider = '';
         if(!userProvider) return true;
 
         return link.provider.includes(userProvider);
