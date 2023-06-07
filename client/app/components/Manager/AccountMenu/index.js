@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 import { Collapse, Navbar } from 'reactstrap';
 
 import Button from '../../Common/Button';
-import {BarsIcon} from '../../Common/Icon'
 
 const AccountMenu = props => {
     const {user, isMenuOpen, links, toggleMenu} = props
