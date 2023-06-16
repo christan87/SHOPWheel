@@ -3,10 +3,15 @@
 */ 
 
 import React from 'react';
+
 import { Switch, Route } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
+
 import AccountMenu from '../AccountMenu'
 import Page404 from '../../Common/Page404';
+
+import Account from '../../../containers/Account';
+
 const Admin = props => {
     return (
         <div className='admin'>
@@ -17,6 +22,7 @@ const Admin = props => {
                 <Col xs='12' md='7' xl='9'>
                     <div className='panel-body'>
                         <Switch>
+                            <Route exact path='/dashboard' component={Account} />
                             <Route path='*' component={Page404} />
                         </Switch>
                     </div>
