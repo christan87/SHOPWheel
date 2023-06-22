@@ -14,7 +14,16 @@ import {
 
 import handleError from '../../utils/error';
 
-//export const accountChange
+export const accountChange = (name, value) => {
+    let formData = {};
+    formData[name] = value;
+
+    return {
+        type: ACCOUNT_CHANGE,
+        payload: formData
+    };
+};
+
 //export const clearAccount
 export const setProfileLoading = value => {
     return {

@@ -14,3 +14,9 @@ export const ROLES = {
 export const CART_ITEMS = 'cart_items';
 export const CART_TOTAL = 'cart_total';
 export const CART_ID = 'cart_id';
+
+export const EMAIL_PROVIDER = {
+    Email: 'Email',
+    Google: 'Google',
+    Facebook: 'Facebook'
+}
