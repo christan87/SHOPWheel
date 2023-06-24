@@ -11,7 +11,7 @@ import AccountMenu from '../AccountMenu'
 import Page404 from '../../Common/Page404';
 
 import Account from '../../../containers/Account';
-
+import AccountSecurity from '../../../containers/AccountSecurity';
 const Admin = props => {
     return (
         <div className='admin'>
@@ -23,6 +23,7 @@ const Admin = props => {
                     <div className='panel-body'>
                         <Switch>
                             <Route exact path='/dashboard' component={Account} />
+                            <Route path='/dashboard/security' component={AccountSecurity} />
                             <Route path='*' component={Page404} />
                         </Switch>
                     </div>

@@ -14,7 +14,7 @@ class Account extends React.PureComponent {
         const { user, accountChange, updateProfile } = this.props
         return (
             <div className='account'>
-                <SubPage title={`Account Details`} >
+                <SubPage title={`Account Details`} isMenueOpen={null}>
                     <AccountDetails 
                         user={user}
                         accountChange={accountChange}

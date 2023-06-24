@@ -13,6 +13,7 @@ import * as newsletter from './containers/Newsletter/actions';
 import * as login from './containers/Login/actions';
 import * as account from './containers/Account/actions';
 import * as dashboard from './containers/Dashboard/actions';
+import * as resetPassword from './containers/ResetPassword/actions';
 export default function (dispatch) {
     return bindActionCreators(
         {
@@ -23,7 +24,8 @@ export default function (dispatch) {
             ...newsletter,
             ...login,
             ...account,
-            ...dashboard
+            ...dashboard,
+            ...resetPassword
         },
         dispatch
     );

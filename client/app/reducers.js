@@ -19,6 +19,7 @@ import newsletterReducer from './containers/Newsletter/reducer';
 import loginReducer from "./containers/Login/reducer";
 import accountReducer from "./containers/Account/reducer";
 import dashboardReducer from "./containers/Dashboard/reducer";
+import resetPasswordReducer from "./containers/ResetPassword/reducer";
 
 const createReducer = history => 
     combineReducers({
@@ -32,7 +33,8 @@ const createReducer = history =>
         newsletter: newsletterReducer,
         login: loginReducer,
         account: accountReducer,
-        dashboard: dashboardReducer
+        dashboard: dashboardReducer,
+        resetPassword: resetPasswordReducer
 
     });
 

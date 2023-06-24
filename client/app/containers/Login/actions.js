@@ -18,6 +18,7 @@ import { setAuth, clearAuth } from '../Authentication/actions';
 import setToken from '../../utils/token';
 import handleError from "../../utils/error";
 import { allFieldsValidation } from '../../utils/validation'
+import { clearAccount } from "../Account/actions";
 
 export const loginChange = (name, value) => {
     let formData = {};
@@ -79,5 +80,21 @@ export const login = () => {
             dispatch({ type: SET_LOGIN_SUBMITTING, payload: false });
             dispatch({ type: SET_LOGIN_LOADING, payload: false });
         }
+    }
+}
+
+export const signOut = () => {
+    return (dispatch, getState) => {
+        const successfulOptions = {
+            title: `You've signed out!`,
+            position: 'tr',
+            autoDismiss: 1
+        };
+        dispatch(clearAuth());
+        dispatch(clearAccount());
+        dispatch(push('/login'));
+
+        localStorage.removeItem('token');
+        dispatch(success(successfulOptions));
     }
 }
