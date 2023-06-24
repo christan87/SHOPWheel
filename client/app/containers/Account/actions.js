@@ -24,7 +24,12 @@ export const accountChange = (name, value) => {
     };
 };
 
-//export const clearAccount
+export const clearAccount = () => {
+    return {
+        type: CLEAR_ACCOUNT
+    }
+}
+
 export const setProfileLoading = value => {
     return {
         type: SET_PROFILE_LOADING,
@@ -41,6 +46,30 @@ export const fetchProfile = () => {
             handleError(error, dispatch)
         } finally {
             dispatch(setProfileLoading(false));
+        }
+    };
+};
+
+export const updateProfile = () => {
+    return async (dispatch, getState) => {
+        const profile = getState().account.user;
+
+        try {
+            const response = await axios.put(`/api/user`, {
+                profile
+            });
+
+            const successfulOptions = {
+                title: `${response.data.message}`,
+                position: 'tr',
+                autoDismiss: 1
+            }
+
+            dispatch({type: FETCH_PROFILE, payload: response.data.user});
+            dispatch(success(successfulOptions));
+
+        } catch (error) {
+            handleError(error, dispatch);
         }
     };
 };
