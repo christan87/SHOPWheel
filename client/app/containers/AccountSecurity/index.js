@@ -12,11 +12,23 @@ import ResetPasswordForm from '../../components/Common/ResetPasswordForm';
 
 class AccountSecurity extends React.PureComponent {
     render(){
+        const {
+            resetFormData,
+            formErrors,
+            resetPasswordChange,
+            resetAccountPassword,
+        } = this.props;
         return(
             <div className='account-security'>
                 <SubPage title={'Account Security'} isMenuOpen={null}>
                     <div className='reset-form'>
-                        <ResetPasswordForm />
+                        <h4>Reset Password</h4>
+                        <ResetPasswordForm 
+                            resetFormData={resetFormData}
+                            formErrors={formErrors}
+                            resetPasswordChange={resetPasswordChange}
+                            resetPassword={resetAccountPassword}
+                        />
                     </div>
                 </SubPage>
             </div>
@@ -25,7 +37,11 @@ class AccountSecurity extends React.PureComponent {
 }
 
 const mapStateToProps = state => {
-    return{}
+    return{
+        user: state.account.user,
+        resetFormData: state.resetPassword.resetFormData,
+        formErrors: state.resetPassword.formErrors
+    }
 }
 
 export default connect(mapStateToProps, actions)(AccountSecurity);

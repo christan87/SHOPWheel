@@ -29,8 +29,8 @@ class Account extends React.PureComponent {
 const mapStateToProps = state => {
     return {
         user: state.account.user,
-        //resetFormData: state.resetPassword.resetFormData,
-        //formErrors: state.resetPassword.formErrors
+        resetFormData: state.resetPassword.resetFormData,
+        formErrors: state.resetPassword.formErrors
     }
 }
 
