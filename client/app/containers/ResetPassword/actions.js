@@ -12,6 +12,8 @@ import {
     SET_RESET_PASSWORD_FORM_ERRORS
 } from './constants';
 
+import { SOCKET_URL } from '../../constants';
+
 import handleError from '../../utils/error';
 import { signOut } from '../Login/actions';
 import { allFieldsValidation } from '../../utils/validation';
@@ -97,9 +99,10 @@ export const resetAccountPassword = () => {
             const response = await axios.post(`/api/auth/reset`, user);
             const successfulOptions = {
                 title: `${response.data.message}`,
-                position: tr,
+                position: 'tr',
                 autoDismiss: 1
             }
+            
             if(response.data.success === true) {
                 dispatch(signOut());
             }
