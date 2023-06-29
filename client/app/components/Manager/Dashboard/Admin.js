@@ -12,6 +12,8 @@ import Page404 from '../../Common/Page404';
 
 import Account from '../../../containers/Account';
 import AccountSecurity from '../../../containers/AccountSecurity';
+import Address from '../../../containers/Address';
+
 const Admin = props => {
     return (
         <div className='admin'>
@@ -24,6 +26,7 @@ const Admin = props => {
                         <Switch>
                             <Route exact path='/dashboard' component={Account} />
                             <Route path='/dashboard/security' component={AccountSecurity} />
+                            <Route path='/dashboard/address' component={Address} />
                             <Route path='*' component={Page404} />
                         </Switch>
                     </div>
