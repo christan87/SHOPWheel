@@ -14,6 +14,8 @@ import * as login from './containers/Login/actions';
 import * as account from './containers/Account/actions';
 import * as dashboard from './containers/Dashboard/actions';
 import * as resetPassword from './containers/ResetPassword/actions';
+import * as address from './containers/Address/actions';
+
 export default function (dispatch) {
     return bindActionCreators(
         {
@@ -25,7 +27,8 @@ export default function (dispatch) {
             ...login,
             ...account,
             ...dashboard,
-            ...resetPassword
+            ...resetPassword,
+            ...address
         },
         dispatch
     );

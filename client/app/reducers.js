@@ -20,6 +20,7 @@ import loginReducer from "./containers/Login/reducer";
 import accountReducer from "./containers/Account/reducer";
 import dashboardReducer from "./containers/Dashboard/reducer";
 import resetPasswordReducer from "./containers/ResetPassword/reducer";
+import addressReducer from "./containers/Address/reducer";
 
 const createReducer = history => 
     combineReducers({
@@ -34,7 +35,8 @@ const createReducer = history =>
         login: loginReducer,
         account: accountReducer,
         dashboard: dashboardReducer,
-        resetPassword: resetPasswordReducer
+        resetPassword: resetPasswordReducer,
+        address: addressReducer
 
     });
 
