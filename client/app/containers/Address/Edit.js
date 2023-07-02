@@ -32,15 +32,23 @@ class Edit extends React.PureComponent {
             deleteAddress,
             defaultChange
         } = this.props
-        console.log(`client>app>containers>Address>Edit> address: ${address? address : 'no address found'}`)
-        console.log(address)
+        
         return(
             <SubPage
                 title='Edit Address'
                 actionTitle='Cancel'
                 handleAction={() => history.goBack()}
             >
-                {address& address._id ? (
+                {/* 
+                    ======Render Error caused by ' address& address._id ? '======
+                    By checking for 'address !== null', you can ensure that the
+                    "address" prop has been assigned before rendering the 
+                    EditAddress component. This way, it will wait for the 
+                    prop to be available and prevent any potential errors 
+                    related to accessing properties on an undefined or null value.
+                */}
+                
+                {address !== null && address._id ? (
                     <EditAddress 
                         address={address}
                         addressChange={addressEditChange}

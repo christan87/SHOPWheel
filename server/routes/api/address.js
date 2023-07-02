@@ -25,7 +25,6 @@ router.get('/:id', auth, async(req, res) => {
     try {
         const addressId = req.params.id;
         const addressDoc = await Address.findOne({ _id: addressId });
-        console.log("server>routes>api>address> addressDoc: ", addressDoc)
         if(!addressDoc) {
             res.status(404).json({
                 message: `Cannot find Address with the id ${addressId}`
