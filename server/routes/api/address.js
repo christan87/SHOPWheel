@@ -21,21 +21,29 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
+/*==============================Avoid Error==============================*/
+/*==========Cannot set headers after they are sent to the client==========*/ 
+/*
+By adding the return statement (return res.status...), you ensure that the 
+execution of the route handler stops after sending a response. This prevents 
+any further attempts to modify headers or send additional responses, which 
+was causing the error.
+*/  
 router.get('/:id', auth, async(req, res) => {
     try {
         const addressId = req.params.id;
         const addressDoc = await Address.findOne({ _id: addressId });
         if(!addressDoc) {
-            res.status(404).json({
+            return res.status(404).json({
                 message: `Cannot find Address with the id ${addressId}`
             });
         }
-        res.status(200).json({
+        return res.status(200).json({
             address: addressDoc
         });
 
     } catch (error) {
-        res.status(400).json({
+        return res.status(400).json({
             error: 'Your request could not be processed. Please try again.'
         });
     }
