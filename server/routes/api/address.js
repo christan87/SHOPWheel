@@ -24,14 +24,15 @@ router.get('/', auth, async (req, res) => {
 router.get('/:id', auth, async(req, res) => {
     try {
         const addressId = req.params.id;
-        const update = req.body;
-        const query = { _id: addressId };
-
-        await Address.findByIdAndUpdate(query, update, {new: true});
-
+        const addressDoc = await Address.findOne({ _id: addressId });
+        console.log("server>routes>api>address> addressDoc: ", addressDoc)
+        if(!addressDoc) {
+            res.status(404).json({
+                message: `Cannot find Address with the id ${addressId}`
+            });
+        }
         res.status(200).json({
-            success: true, 
-            message: 'Address has been updated successfully'
+            address: addressDoc
         });
 
     } catch (error) {
@@ -44,13 +45,14 @@ router.get('/:id', auth, async(req, res) => {
 
 router.post('/add', auth, async (req, res) => {
     try {
+        
         const user = req.user;
 
         const address = new Address({
             ...req.body,
             user: user._id
         });
-
+        
         const addressDoc = await address.save();
         
         res.status(200).json({

@@ -40,12 +40,12 @@ const initialState = {
 
 const addressReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_ADDRESS:
+        case FETCH_ADDRESSES:
             return {
                 ...state,
                 addresses: action.payload
             };
-        case FETCH_ADDRESSES:
+        case FETCH_ADDRESS:
             return {
                 ...state,
                 address: action.payload,

@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import actions from "../../actions";
 
 import Add from './Add';
+import Edit from './Edit';
 import Page404 from "../../components/Common/Page404";
 
 class Address extends React.PureComponent {
@@ -13,6 +14,7 @@ class Address extends React.PureComponent {
             <div className="address-dashboard">
                 <Switch>
                     <Route exact path='/dashboard/address/add' component={Add} />
+                    <Route exact path='/dashboard/address/edit/:id' component={Edit} />
                     <Route path='*' component={Page404} />
                 </Switch>
             </div>

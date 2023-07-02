@@ -90,6 +90,7 @@ export const fetchAddress = addressId => {
 export const addAddress = () => {
     return async (dispatch, getState) => {
         try {
+            
             const rules = {
                 address: 'required',
                 city: 'required',
@@ -118,8 +119,7 @@ export const addAddress = () => {
                 ...newAddress
             }
 
-            const response = await axios.post(`/api/address/add`, add);
-
+            const response = await axios.post(`/api/address/add`, address);
             const successfulOptions = {
                 title: `${response.data.message}`,
                 position: 'tr',
