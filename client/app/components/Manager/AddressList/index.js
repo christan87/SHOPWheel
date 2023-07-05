@@ -24,7 +24,7 @@ const AddressList = props => {
                         </div>
                         <div className='flex-1 p-3 p-lg-4'>
                             {address.isDefault ? (
-                                <div className='d-felx align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center justify-content-between mb-2'>
                                     <h4 className='mb-0 mr-2 one-line-ellipsis'>
                                         Default Delivery Address
                                     </h4>
